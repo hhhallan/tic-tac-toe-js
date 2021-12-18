@@ -54,6 +54,14 @@ h2 {
     margin-top: 50px;
 }
 
+.score {
+    display: flex;
+    max-width: 300px;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+
 button {
     padding: 15px 30px;
     font-size: 20px;

@@ -1,12 +1,17 @@
 const info = document.querySelector('.info');
 const cells = Array.from(document.querySelectorAll('.cell'));
 const winner = document.querySelector('.winner');
+const scoreX = document.querySelector('#point-x');
+const scoreO = document.querySelector('#point-o');
+
 
 let game = ['','','','','','','','',''];
 let player = "X";
 let gameActive = true;
 
-// win conditions
+let x_point = 0;
+let o_point = 0;
+
 const x_won = 'Player X won';
 const o_won = 'Player O won';
 const tie = 'Tie';
@@ -55,9 +60,13 @@ const announce = (type) => {
     switch (type) {
         case x_won:
             winner.innerHTML = `Player <span class="playerX">X</span> Won`;
+            x_point++;
+            scoreX.innerText = x_point;
             break;
         case o_won:
             winner.innerHTML = `Player <span class="playerO">O</span> Won`;
+            o_point++
+            scoreO.innerText = o_point;
             break;
         case tie:
             winner.innerText = 'Tie';
@@ -95,6 +104,8 @@ const resetBoard = () => {
     game = ['','','','','','','','',''];
     gameActive = true;
     winner.innerHTML = `Player <span class="info playerX">X</span>'s turn`;
+
+
 
     if (player === 'O') changePlayer();
 
