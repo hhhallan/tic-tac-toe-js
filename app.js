@@ -74,7 +74,7 @@ const announce = (type) => {
 }
 
 const isValidAction = (cell) => {
-    if (cell === 'X' || cell === 'O') return false;
+    if (cell.classList.contains('playerX') || cell.classList.contains('playerO')) return false;
 
     return true;
 }
